@@ -1,6 +1,54 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 1800px;
+    width: 1000px;
+}
+
 .grid{
     display: flex;
-    flex-wrap: wrap;
-    height: 300px;
+    flex-flow : row wrap;
+    height: 400px;
     width: 400px;
+    justify-content: center;
+    align-items: center;
 }
+
+.flex-footer{
+    display: flex;
+    width:500px;
+    justify-content: center;
+    align-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        display: flex;
+        flex-flow : row wrap;
+        height: 650px;
+        width: 200px;
+        justify-content: center;
+        align-content: flex-start;
+
+
+    }
+    .flex-footer{
+        display: flex;
+        width:300px;
+        justify-content: center;
+        align-content: flex-start;
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: stretch;
+        flex-wrap: nowrap;
+        height: 1000px;
+        width: 200px;
+    }
+}
+

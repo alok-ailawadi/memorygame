@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     var cardChosenId = [];
     var cardsWon = [];
     var resultDisplay  = document.querySelector('#result');
+    var attemptDisplay  = document.querySelector('#attempts');
+    var attempts = 0;
 
 //create your board
     function createBoard() {
@@ -83,17 +85,20 @@ document.addEventListener('DOMContentLoaded', () =>{
             cards[cardOptionTwo].setAttribute('src', 'images/reel.png')
             cardsWon.push(cardsChosen);
             alert("It's a match");
+            attempts++;
         }else {
             cards[cardOptionOne].setAttribute('src', 'images/black-icon.png')
             cards[cardOptionTwo].setAttribute('src', 'images/black-icon.png')
             alert('Sorry try again')
+            attempts++;
         }
-        //reset the chosen arrau
+        //reset the chosen array
         cardsChosen = [];
         cardChosenId = [];
         resultDisplay.textContent = cardsWon.length;
+        attemptDisplay.textContent = attempts;
         if(cardsWon.length === cardArray.length/2){
-            resultDisplay.textContent = 'Congratulations on winning the game';
+            resultDisplay.textContent = 'Congratulations on winning the game in ' + attempts +' attempts';
         }
     }
 
